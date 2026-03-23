@@ -190,7 +190,7 @@ e^{i\ x} &= \sum_{k=0}^{\infty} \frac{(i\ x)^k}{k!}\\
 \frac{(-1)^{k}\ i\ x^{2k+1}}{(2k + 1)!}\\ 
 &\ \\
 &\ \\
-&\text{première somme :}\\
+\text{première somme :}\\
 &\sum_{k=0}^{\infty} 
 \frac{(-1)^{k}\ x^{2k}}{(2k)!}\\ 
 &= 1 - \sum_{k=1}^{\infty}
@@ -198,7 +198,7 @@ e^{i\ x} &= \sum_{k=0}^{\infty} \frac{(i\ x)^k}{k!}\\
 &= \cos(x) \quad \text{par identification de la série de Taylor}\\
 &\ \\
 &\ \\
-&\text{deuxième somme :}\\
+\text{deuxième somme :}\\
 &\sum_{k=0}^{\infty} 
 \frac{(-1)^{k}\ i\ x^{2k+1}}{(2k + 1)!}\\ 
 &= i\ \sum_{k=0}^{\infty} 
@@ -206,7 +206,7 @@ e^{i\ x} &= \sum_{k=0}^{\infty} \frac{(i\ x)^k}{k!}\\
 &= i\ \sin(x) \quad \text{par identification de la série de Taylor}\\
 &\ \\
 &\ \\
-&\text{donc : }\\
+\text{donc : }\\
 &e^{i\ x} = \cos(x) + i\ \sin(x)\\
 \end{align}
 $$
