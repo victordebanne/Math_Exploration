@@ -84,7 +84,7 @@ De cette manière, nous pouvons calculer les séries de Taylor pour les fonction
 nous allons noter $Z$ la matrice représentant le complexe $z$.
 
 $$
-exp(z) = \sum_{n=1}^{\infty} \frac{f^k(0)}{k!}  Z^k
+e^z = \sum_{k=0}^{\infty} \frac{Z^k}{k!}  
 $$
 
 J'ai choisi de calculer $Z^k$ à l'aide du binome de newton. 
@@ -137,13 +137,13 @@ $$
 
 on a alors $i^k = i^{\ k \mod 4}$
 
-on peut alors calculer facilement la série de Taylor pour Z et un N défini pour chacune des fonctions : 
+on peut alors calculer facilement la série de Taylor pour $Z$ et un $N$ défini pour chacune des fonctions : 
 
 $$
 \begin{align}
-exp(z) &= \sum_{n=0}^{N} \frac{Z^k}{k!}\\
-sin(z) &= \sum_{n=0}^{N} \frac{k[n \mod 4] \ Z^k}{k!} \quad \text{avec} \quad k = \[0, 1, 0, -1\]\\
-cos(z) &= \sum_{n=0}^{N} \frac{k[n \mod 4] \ Z^k}{k!} \quad \text{avec} \quad k = \[1, 0, -1, 0\]  \\ 
+e^z &= \sum_{k=0}^{N} \frac{Z^k}{k!}\\
+sin(z) &= \sum_{k=0}^{N} \frac{k[n \mod 4] \ Z^k}{k!} \quad \text{avec} \quad k = \[0, 1, 0, -1\]\\
+cos(z) &= \sum_{k=0}^{N} \frac{k[n \mod 4] \ Z^k}{k!} \quad \text{avec} \quad k = \[1, 0, -1, 0\]  \\ 
 \end{align}
 $$
 
@@ -151,16 +151,66 @@ On peut simplifier algorithmiquement de sorte à ne pas faire les multiplication
 
 $$
 \begin{align}
-sin(z) &= \sum_{n=0}^{N} \frac{(-1)^n \ Z^{2n + 1}}{(2n + 1)!} \\
-cos(z) &= 1 - \sum_{n=1}^{N} \frac{(-1)^{n + 1} \ Z^{2n}}{(2n)!} \\
+sin(z) &= \sum_{k=0}^{N} \frac{(-1)^k \ Z^{2k + 1}}{(2k + 1)!} \\
+cos(z) &= 1 - \sum_{k=1}^{N} \frac{(-1)^{k + 1} \ Z^{2k}}{(2k)!} \\
 \end{align}
 $$
 
 # Démonstration de la formule d'Euler
 
-à partir d'ici, il est possible de démontrer la formule d'Euler en utilisant les puissances de i ainsi que les séries de Taylor pour le sinus et le cosinus. 
+à partir d'ici, il est possible de démontrer la formule d'Euler en utilisant les puissances de $i$ ainsi que les séries de Taylor pour le sinus et le cosinus. 
 la puissance de $Z$ ne nécessite plus le binome de newton étant donné qu'il n'y a pas de partie réelle. 
-on pose $z = ix$ les puissances de $z$ deviennet donc 
+on pose $z = ix$ les puissances de $z$ deviennet donc comme vu précédemment : 
+
+$$
+z^k = (x \ i)^k = x^k \ i^{\ k \mod 4}
+$$
+
+il y a deux cas : 
+- quand la puissance est paire
+  
+$$
+z^{2k} = (-1)^{k}\ x^{2k}
+$$
+
+- quand la puissance est impaire
+  
+$$
+z^{2k + 1} = (-1)^{k}\ i\ x^{2k+1}
+$$
+
+on a donc la série de Taylor pour l'exponentielle : 
+
+$$
+\begin{align}
+e^{i\ x} &= \sum_{k=0}^{\infty} \frac{(i\ x)^k}{k!}\\
+&= \sum_{k=0}^{\infty} 
+\frac{(-1)^{k}\ x^{2k}}{(2k)!}\\ + 
+\sum_{k=0}^{\infty} 
+\frac{(-1)^{k}\ i\ x^{2k+1}}{(2k + 1)!}\\ 
+&\ \\
+&\ \\
+&\text{première somme :}\\
+&\sum_{k=0}^{\infty} 
+\frac{(-1)^{k}\ x^{2k}}{(2k)!}\\ 
+&= 1 - \sum_{k=1}^{\infty}
+\frac{(-1)^{k}\ x^{2k}}{(2k)!}\\ 
+&= \cos(x) \quad \text{par identification de la série de Taylor}\\
+&\ \\
+&\ \\
+&\text{deuxième somme :}\\
+&\sum_{k=0}^{\infty} 
+\frac{(-1)^{k}\ i\ x^{2k+1}}{(2k + 1)!}\\ 
+&= i\ \sum_{k=0}^{\infty} 
+\frac{(-1)^{k}\ x^{2k+1}}{(2k + 1)!}\\ 
+&= i\ \sin(x) \quad \text{par identification de la série de Taylor}\\
+&\ \\
+&\ \\
+&\text{donc : }\\
+&e^{i\ x} = \cos(x) + i\ \sin(x)\\
+\end{align}
+$$
+
 
 
 
