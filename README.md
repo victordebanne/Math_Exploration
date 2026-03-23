@@ -1,5 +1,11 @@
 # Calculatrice_Complexe
 
+*Ce code et ce texte visent a manipuler experimentalement la formule d'Euler, sans jamais l'utiliser. 
+il serait evidemement plus simple de calculer*
+
+$$
+e^z \quad \text{comme} \quad e^{Re(z)} \times \left(\cos\left(Im(z)\right) + i \ \sin\left(Im(z)\right)\right)
+$$
 
 On peut manipuler les nombers complexes à la fois intuitivement et informatiquement en utilisant la forme matricielle de $i$.
 
