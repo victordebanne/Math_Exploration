@@ -156,6 +156,12 @@ cos(z) &= 1 - \sum_{n=1}^{N} \frac{(-1)^{n + 1} \ Z^{2n}}{(2n)!} \\
 \end{align}
 $$
 
+# Démonstration de la formule d'Euler
+
+à partir d'ici, il est possible de démontrer la formule d'Euler en utilisant les puissances de i ainsi que les séries de Taylor pour le sinus et le cosinus. 
+la puissance de $Z$ ne nécessite plus le binome de newton étant donné qu'il n'y a pas de partie réelle. 
+on pose $z = ix$ les puissances de $z$ deviennet donc 
+
 
 
 
