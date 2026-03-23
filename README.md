@@ -7,6 +7,8 @@ $$
 e^z \quad \text{comme} \quad e^{Re(z)} \times \left(\cos\left(Im(z)\right) + i \ \sin\left(Im(z)\right)\right)
 $$
 
+# Représentation matricielle
+
 On peut manipuler les nombers complexes à la fois intuitivement et informatiquement en utilisant la forme matricielle de $i$.
 
 $$
@@ -74,6 +76,8 @@ a & -b \\
 b & a
 \end{pmatrix}
 $$
+
+# Séries de Taylor
 
 De cette manière, nous pouvons calculer les séries de Taylor pour les fonctions suivantes : $exp(z), \ cos(z), \ sin(z), \ log(z)...$
 
