@@ -206,6 +206,30 @@ elle resemble a une suite alternée qui tend vers 0.
 Ce code n'est pas très interessant du point de vu de l'optimisation. en effet, les recursions ammènent une compléxité exponentielle. Par contre la structure récursive sous jacente de la puissance ma interessé. 
 Il reste pour l'instant beaucoup à explorer, sur la structure de l'erreur qui je pense est digne d'interet. mais aussi des points bloquants pour l'algorithme (0.749 par exemple) 
 
+$$
+k = \lfloor k \rfloor + (k - \lfloor k \rfloor) \quad \text{une partie entière et une partie fractionnaire}\\
+$$
+
+$$
+k - \lfloor k \rfloor = \frac{1}{\frac{1}{k - \lfloor k \rfloor}} \quad \text{comme} \quad k - \lfloor k \rfloor < 0, \frac{1}{k - \lfloor k \rfloor} > 0\\
+$$
+
+$$
+\frac{1}{k - \lfloor k \rfloor} = \lfloor \frac{1}{k - \lfloor k \rfloor} \rfloor + (\frac{1}{k - \lfloor k \rfloor} - \lfloor \frac{1}{k - \lfloor k \rfloor} \rfloor) \\
+$$
+
+
+$$
+\frac{1}{k - \lfloor k \rfloor} - \lfloor \frac{1}{k - \lfloor k \rfloor} \rfloor = \frac{1}{\frac{1}{\frac{1}{k - \lfloor k \rfloor} - \lfloor \frac{1}{k - \lfloor k \rfloor} \rfloor}} \\
+$$
+
+$$
+k = \lfloor k \rfloor + \frac{1}{\lfloor \frac{1}{k - \lfloor k \rfloor} \rfloor + \frac{1}{\frac{1}{\frac{1}{k - \lfloor k \rfloor} - \lfloor \frac{1}{k - \lfloor k \rfloor} \rfloor}}} \\
+$$
+
+$$
+\cdots
+$$
 
 
 
